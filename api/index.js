@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const authRouter = require('./routes/auth');
+const authRoute = require('./routes/auth');
+const userRoute = require('./routes/users');
 
 dotenv.config();
 
@@ -16,8 +17,8 @@ async function main() {
     })
     .then(() => console.log('Connected to MongoDB'));
   app.use(express.json());
-
-  app.use('/api/auth', authRouter);
+  app.use('/api/auth', authRoute);
+  app.use('/api/users', userRoute);
 }
 
 app.listen(8800, () => {
