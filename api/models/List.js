@@ -23,4 +23,4 @@ const ListSchema = new mongoose.Schema(
     }
 )
 
-module.export = mongoose.model("User", ListSchema)
+module.exports = mongoose.model("User", ListSchema)
